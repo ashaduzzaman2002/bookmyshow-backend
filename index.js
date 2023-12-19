@@ -14,6 +14,9 @@ connection();
 
 // creating an api and seperating it.
 app.use("/api", require("./routes"));
+app.use("/", (req, res) => {
+    res.send('Working fine')
+});
 
 // listening backend on a port.
 app.listen(port, () => console.log(`App listening on port ${port}!`));
